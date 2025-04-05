@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Cknow\Money\Casts\MoneyIntegerCast;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -14,5 +15,6 @@ class Transaction extends Model
 
     public $casts = [
         'date' => 'datetime',
+        'amount' => MoneyIntegerCast::class,
     ];
 }
